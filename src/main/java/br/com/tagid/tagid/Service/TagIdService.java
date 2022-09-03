@@ -39,8 +39,8 @@ public class TagIdService {
             Tag uTag = repository.findById(tagId).orElse(null);
             if (uTag ==null) throw new Exception();
 
-            uTag.setStatus(tag.isStatus());
             uTag.setDescription(tag.getDescription());
+            uTag.setAuthorized(tag.isAuthorized());
 
             repository.save(uTag);
         } catch (Exception e) {
