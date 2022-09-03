@@ -15,9 +15,8 @@ public class Tag {
     @Column(name = "st_athorized")
     private boolean authorized;
 
-    public Tag(String tagId, boolean status) {
+    public Tag(String tagId) {
         this.tagId = tagId;
-        this.status = status;
         this.authorized = false;
     }
 

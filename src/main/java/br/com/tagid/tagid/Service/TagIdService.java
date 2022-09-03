@@ -15,7 +15,9 @@ public class TagIdService {
 
     public void insertTagId(Tag tagId) {
         try {
-            Tag tag = new Tag(tagId.getTagId(), tagId.isStatus());
+            Tag tag = repository.findById(tagId.getTagId()).orElse(null);
+            if (tag == null) tag = new Tag(tagId.getTagId());
+            tag.setStatus(tagId.isStatus());
             repository.save(tag);
         } catch (Exception e) {
             e.printStackTrace();

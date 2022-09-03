@@ -21,7 +21,7 @@ public class TagIdController {
     }
 
     @PostMapping
-    public ResponseEntity<Tag> createAttendant(@RequestBody Tag tagId) {
+    public ResponseEntity<Tag> generateTagOrUpdate(@RequestBody Tag tagId) {
         service.insertTagId(tagId);
         return ResponseEntity.status(HttpStatus.CREATED).body(tagId);
     }
